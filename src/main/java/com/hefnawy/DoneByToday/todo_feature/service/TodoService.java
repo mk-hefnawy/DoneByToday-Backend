@@ -1,4 +1,4 @@
-package com.hefnawy.DoneByToday.todo_feature.services;
+package com.hefnawy.DoneByToday.todo_feature.service;
 
 import com.hefnawy.DoneByToday.exceptions.NoSuchTodoException;
 import com.hefnawy.DoneByToday.exceptions.NoSuchUserException;
@@ -10,6 +10,7 @@ import java.util.List;
 @Component
 public interface TodoService {
     List<Todo> getAllTodosByUserName(String userName) throws NoSuchUserException;
-    Boolean addNewTodo(String userName, Todo todo);
-    void updateTodo(String userName, Todo todo) throws NoSuchUserException, NoSuchTodoException;
+    Todo addNewTodo(String userName, Todo todo) throws NoSuchUserException;
+    Todo updateTodo(String userName, String todoId, Todo todo) throws NoSuchUserException, NoSuchTodoException;
+    Todo deleteTodo(String userName, String todoId) throws NoSuchUserException, NoSuchTodoException;
 }

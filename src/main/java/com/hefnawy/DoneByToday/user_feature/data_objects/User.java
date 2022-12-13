@@ -21,8 +21,14 @@ public class User {
     @Column(name = "user_name")
     private String userName;
 
+    private String password;
+
+    private String roles;
+
+    private Boolean isActive;
+
     @OneToMany
-    @Cascade(value = org.hibernate.annotations.CascadeType.MERGE)
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private List<Todo> todos;
 
 }
